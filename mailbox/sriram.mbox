@@ -1,0 +1,24 @@
+From <martin@localhost> Mon Jun 10 00:47:39 2024
+
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename="malware/text.txt"
+Content-Transfer-Encoding: base64
+
+eW9vb28=
+--boundary--
+From <martin@localhost> Mon Jun 10 01:15:34 2024
+
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename="malware/text.txt"
+Content-Transfer-Encoding: base64
+
+eW9vb28=
+--boundary--
+From <martin@localhost> Mon Jun 10 01:20:21 2024
+
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename="malware/text.txt"
+Content-Transfer-Encoding: base64
+
+eW9vb28=
+--boundary--
