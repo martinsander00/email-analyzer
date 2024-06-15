@@ -48,8 +48,14 @@ std::string read_file(const std::string &filename) {
     return buffer.str();
 }
 
-int main() {
+int main(int argc, char* argv[]) {
     // Create a socket
+    if (argc != 2) {
+	std::cout << "Input Error: You need to enter a file-path to send to the server" << std::endl;
+    }
+
+    std::string file = argv[1];
+
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if (sockfd < 0) {
         perror("Error creating socket");
@@ -83,7 +89,7 @@ int main() {
     }
 
     // Send the file as an attachment
-    std::string filename = "malware/text.txt"; // Replace with your file
+    std::string filename = file; // Replace with your file
     std::string file_content = read_file(filename);
     std::string encoded_content = base64_encode(file_content);
 

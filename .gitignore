@@ -1,0 +1,20 @@
+# Ignore object files
+*.o
+
+# Ignore compiled binaries and executables
+client
+smtp
+analyzer
+
+# Ignore debugging symbols directories
+*.dSYM
+
+# Ignore specific directories or files (if needed)
+# For example, if you want to ignore the mailbox directory
+# /mailbox
+
+# Ignore general temporary files
+*.log
+*.tmp
+*.swp
+
