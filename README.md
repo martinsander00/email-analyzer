@@ -1,7 +1,5 @@
 # Malware Analysis Tool
 
-**Full Name**: Martin Sander
-
 **Description**: This project includes a malware analysis tool with a simple SMTP server and client for testing purposes. The SMTP server receives emails and files, which are stored in a specified folder, while the client sends emails and files to the server.
 
 **Stage**: Early stages
