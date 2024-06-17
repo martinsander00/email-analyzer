@@ -9,9 +9,9 @@ analyzer
 # Ignore debugging symbols directories
 *.dSYM
 
-# Ignore specific directories or files (if needed)
-# For example, if you want to ignore the mailbox directory
-# /mailbox
+# Ignore specific directories
+/mailbox/
+/malware/
 
 # Ignore general temporary files
 *.log
