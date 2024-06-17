@@ -54,7 +54,14 @@ int main(int argc, char* argv[]) {
 	std::cout << "Input Error: You need to enter a file-path to send to the server" << std::endl;
     }
 
-    std::string file = argv[1];
+    std::string filename = argv[1];
+    std::string file_content = read_file(filename);
+
+    // Check if file_content is empty and terminate if true
+    if (file_content.empty()) {
+        std::cerr << "Error: File content is empty, file may not exist or cannot be read" << std::endl;
+        return 1; // Exit with an error code
+    }    
 
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if (sockfd < 0) {
@@ -89,11 +96,9 @@ int main(int argc, char* argv[]) {
     }
 
     // Send the file as an attachment
-    std::string filename = file; // Replace with your file
-    std::string file_content = read_file(filename);
     std::string encoded_content = base64_encode(file_content);
-
-    std::string attachment_header = "Content-Type: application/octet-stream\r\nContent-Disposition: attachment; filename=\"" + filename + "\"\r\nContent-Transfer-Encoding: base64\r\n\r\n";
+    std::string attachment_header = "Content-Type: application/octet-stream\r\nContent-Disposition: attachment; filename=\"" + filename + "\"\r\nContent-Transfer-Encoding: base64\r\n\r\n";    
+    
     send_command(sockfd, attachment_header.c_str());
     send_command(sockfd, encoded_content.c_str());
     send_command(sockfd, "\r\n--boundary--\r\n");
