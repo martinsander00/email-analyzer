@@ -15,15 +15,15 @@ To run the SMTP server, you need to provide two arguments:
 
 #### Command
 
-\`\`\`sh
+```sh
 ./smtp /path/to/mbox/folder
-\`\`\`
+```
 
 #### Example
 
-\`\`\`sh
+```sh
 ./smtp /home/user/mbox
-\`\`\`
+```
 
 With `mbox` containing a file named `bob.mbox`.
 
@@ -33,14 +33,14 @@ To run the client, you need to provide the path to a file that you want to send 
 
 #### Command
 
-\`\`\`sh
+```sh
 ./client /path/to/file
-\`\`\`
+```
 
 ### Example
 
-\`\`\`sh
+```sh
 ./client /home/user/malware.txt
-\`\`\`
+```
 
 If the file does not exist, the SMTP server will issue a warning.
